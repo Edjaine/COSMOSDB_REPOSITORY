@@ -1,0 +1,188 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/Api.csproj": {}
+  },
+  "projects": {
+    "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/Api.csproj",
+        "projectName": "Api",
+        "projectPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/Api.csproj",
+        "packagesPath": "/home/edjaine/.nuget/packages/",
+        "outputPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/edjaine/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj": {
+                "projectPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj"
+              },
+              "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/Infra.csproj": {
+                "projectPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/Infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.14.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj",
+        "projectName": "Core",
+        "projectPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj",
+        "packagesPath": "/home/edjaine/.nuget/packages/",
+        "outputPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/edjaine/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/Infra.csproj",
+        "projectName": "Infra",
+        "projectPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/Infra.csproj",
+        "packagesPath": "/home/edjaine/.nuget/packages/",
+        "outputPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/edjaine/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj": {
+                "projectPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.Azure.DocumentDB.Core": {
+              "target": "Package",
+              "version": "[2.12.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/bin/Debug/netstandard2.0/Microsoft.Azure.Documents.ServiceInterop.dll
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/bin/Debug/netstandard2.0/Cosmos.CRTCompat.dll
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/bin/Debug/netstandard2.0/Infra.deps.json
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/bin/Debug/netstandard2.0/Infra.dll
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/bin/Debug/netstandard2.0/Infra.pdb
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/bin/Debug/netstandard2.0/Core.dll
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/bin/Debug/netstandard2.0/Core.pdb
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/Debug/netstandard2.0/Infra.csprojAssemblyReference.cache
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/Debug/netstandard2.0/Infra.AssemblyInfoInputs.cache
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/Debug/netstandard2.0/Infra.AssemblyInfo.cs
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/Debug/netstandard2.0/Infra.csproj.CoreCompileInputs.cache
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/Debug/netstandard2.0/Infra.csproj.CopyComplete
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/Debug/netstandard2.0/Infra.dll
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/Debug/netstandard2.0/Infra.pdb
