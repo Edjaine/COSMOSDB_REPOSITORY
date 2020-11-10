@@ -24,7 +24,4 @@
       <Link>ThirdPartyNotice.txt</Link>
     </Content>
   </ItemGroup>
-  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">/home/edjaine/.nuget/packages/newtonsoft.json/10.0.2</PkgNewtonsoft_Json>
-  </PropertyGroup>
 </Project>

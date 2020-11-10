@@ -21,12 +21,45 @@ namespace Api.Controllers
             _logger = logger;
             _pessoaRepository = pessoaRepository;
         }
+        // [HttpGet]
+        // public IActionResult GetAction()
+        // {
+        //     return Ok("It's Alive");
+        // }
+
+        [HttpGet]
+        public async Task<IActionResult> Get(string id) {
+            try {
+                return Ok( await _pessoaRepository.GetByIdAsync(id));
+            }
+            catch( Exception ex) {
+                return BadRequest(ex);
+            }
+        } 
 
         [HttpPost]
-        public IActionResult Post(string nome, int idade){
-
-            var pessoa = new Core.Models.Pessoa() { Nome = nome, Idade= idade};
-            return Ok();
+        public async Task<IActionResult> Post([FromBody] Core.Models.Pessoa pessoa)
+        {
+            try {
+                var resposta = await _pessoaRepository.AddAsync(pessoa);
+                return Ok(resposta);
+            } 
+            catch( Exception ex) {
+                return BadRequest(ex);
+            }
         } 
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(string id){
+            try
+            {
+                await _pessoaRepository.DeleteAsync(id);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
     }
 }

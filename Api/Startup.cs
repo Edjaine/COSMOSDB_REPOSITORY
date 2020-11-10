@@ -31,10 +31,16 @@ namespace Api
         {
             var connectionStringsOptions =
                 Configuration.GetSection("ConnectionStrings").Get<ConnectionStringsOptions>();
+
             var cosmosDbOptions = Configuration.GetSection("CosmosDb").Get<CosmosDbOptions>();
             var (serviceEndpoint, authKey) = connectionStringsOptions.ActiveConnectionStringOptions;
             var (databaseName, collectionData) = cosmosDbOptions;
             var collectionNames = collectionData.Select(c => c.Name).ToList();
+
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 
             services.AddCosmosDb(serviceEndpoint, authKey, databaseName, collectionNames);
             services.AddScoped<IPessoaRepository, PessoaRepository>();
@@ -49,8 +55,6 @@ namespace Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 

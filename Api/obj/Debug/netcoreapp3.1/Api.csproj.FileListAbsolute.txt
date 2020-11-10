@@ -43,3 +43,6 @@
 /home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/obj/Debug/netcoreapp3.1/Api.dll
 /home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/obj/Debug/netcoreapp3.1/Api.pdb
 /home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/obj/Debug/netcoreapp3.1/Api.genruntimeconfig.cache
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.JsonPatch.dll
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Api/bin/Debug/netcoreapp3.1/Newtonsoft.Json.Bson.dll
