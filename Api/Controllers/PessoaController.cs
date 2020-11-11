@@ -21,12 +21,6 @@ namespace Api.Controllers
             _logger = logger;
             _pessoaRepository = pessoaRepository;
         }
-        // [HttpGet]
-        // public IActionResult GetAction()
-        // {
-        //     return Ok("It's Alive");
-        // }
-
         [HttpGet]
         public async Task<IActionResult> Get(string id) {
             try {
@@ -59,6 +53,19 @@ namespace Api.Controllers
             catch (System.Exception ex)
             {
                 return BadRequest(ex);
+            }
+        }
+        
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] Core.Models.Pessoa pessoa) 
+        {
+            try
+            {
+                return Ok( await _pessoaRepository.UpdateAsync(pessoa));
+            }
+            catch (Exception ex)
+            {
+              return BadRequest(ex);
             }
         }
     }
