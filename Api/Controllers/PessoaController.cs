@@ -22,8 +22,19 @@ namespace Api.Controllers
             _pessoaRepository = pessoaRepository;
         }
         [HttpGet]
+        public async Task<IActionResult> Get() {
+            try 
+            {
+                return Ok( await _pessoaRepository.GetAll("select * from c"));
+            }
+            catch( Exception ex) {
+                return BadRequest(ex);
+            }
+        }
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id) {
-            try {
+            try 
+            {
                 return Ok( await _pessoaRepository.GetByIdAsync(id));
             }
             catch( Exception ex) {

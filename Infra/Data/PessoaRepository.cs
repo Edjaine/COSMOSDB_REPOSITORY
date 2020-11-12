@@ -13,7 +13,7 @@ namespace Pessoa.Infrastructure.Data
     {
         public PessoaRepository(ICosmosDbClientFactory factory) : base(factory) { }
 
-        public override string CollectionName { get; } = "pessoa";
+        public override string CollectionName { get; } = "Pessoa";
         public override string GenerateId(Core.Models.Pessoa entity) => $"{entity.Idade}:{Guid.NewGuid()}";
         public override PartitionKey ResolvePartitionKey(string entityId) => new PartitionKey(entityId.Split(':')[0]);
     }

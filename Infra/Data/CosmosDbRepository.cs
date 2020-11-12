@@ -10,6 +10,8 @@ using Newtonsoft.Json;
 using Core.Exception;
 using Core.Interface;
 using Core.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TodoService.Infrastructure.Data
 {
@@ -22,6 +24,26 @@ namespace TodoService.Infrastructure.Data
             _cosmosDbClientFactory = cosmosDbClientFactory;
         }
 
+        public Task<IList<T>> GetAll(string sql) 
+        {
+            try
+            {
+                var cosmosDbClient = _cosmosDbClientFactory.GetClient(CollectionName);
+                var document = cosmosDbClient.ReadDocumentBySql(sql);
+                var arrayDocument = string.Join<Document>(",", document.ToList());                     
+                return Task.Factory.StartNew( () => JsonConvert.DeserializeObject<IList<T>>( $"[ {arrayDocument} ]"));
+
+            }
+            catch (DocumentClientException e)
+            {
+                if (e.StatusCode == HttpStatusCode.NotFound)
+                {
+                    throw new EntityNotFoundException();
+                }
+
+                throw;
+            }
+        }    
         public async Task<T> GetByIdAsync(string id)
         {
             try
@@ -65,12 +87,13 @@ namespace TodoService.Infrastructure.Data
             }
         }
 
-        public async Task UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
             try
             {
                 var cosmosDbClient = _cosmosDbClientFactory.GetClient(CollectionName);
-                await cosmosDbClient.ReplaceDocumentAsync(entity.Id, entity);
+                var document = await cosmosDbClient.ReplaceDocumentAsync(entity.Id, entity);
+                return JsonConvert.DeserializeObject<T>(document.ToString());
             }
             catch (DocumentClientException e)
             {
@@ -83,15 +106,16 @@ namespace TodoService.Infrastructure.Data
             }
         }
 
-        public async Task DeleteAsync(T entity)
+        public async Task DeleteAsync(string id)
         {
             try
             {
                 var cosmosDbClient = _cosmosDbClientFactory.GetClient(CollectionName);
-                await cosmosDbClient.DeleteDocumentAsync(entity.Id, new RequestOptions
+                var document =  await cosmosDbClient.DeleteDocumentAsync(id, new RequestOptions
                 {
-                    PartitionKey = ResolvePartitionKey(entity.Id)
-                });
+                    PartitionKey = ResolvePartitionKey(id)
+                });               
+
             }
             catch (DocumentClientException e)
             {

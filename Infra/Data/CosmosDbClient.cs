@@ -2,6 +2,8 @@
 // Licensed under the MIT license.using System
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
@@ -22,9 +24,29 @@ namespace TodoService.Infrastructure.Data
             _documentClient = documentClient ?? throw new ArgumentNullException(nameof(documentClient));
         }
 
+        public async Task<DocumentCollection> ReadDocumentCollectionAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return await _documentClient.ReadDocumentCollectionAsync(
+                UriFactory.CreateDocumentCollectionUri(_databaseName, _collectionName)
+            );
+
+        }
+
+        public IList<Document> ReadDocumentBySql(string query) 
+        {
+            var option = new FeedOptions { EnableCrossPartitionQuery = true };
+
+            var documents = _documentClient.CreateDocumentQuery<Document>(
+                UriFactory.CreateDocumentCollectionUri(_databaseName, _collectionName), query, option
+            ).ToList();
+
+            return documents.ToList();
+        }
+
         public async Task<Document> ReadDocumentAsync(string documentId, RequestOptions options = null,
             CancellationToken cancellationToken = default(CancellationToken))
-        {
+        {       
+
             return await _documentClient.ReadDocumentAsync(
                 UriFactory.CreateDocumentUri(_databaseName, _collectionName, documentId), options, cancellationToken);
         }
