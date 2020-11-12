@@ -22,10 +22,11 @@ namespace Api.Controllers
             _pessoaRepository = pessoaRepository;
         }
         [HttpGet]
-        public async Task<IActionResult> Get() {
+        public IActionResult Get() {
             try 
             {
-                return Ok( await _pessoaRepository.GetAll("select * from c"));
+                return Ok( _pessoaRepository.GetAll(c=> c.idade == "35"));
+                //return Ok( await _pessoaRepository.GetAll("select * from c where c.idade = '37'"));
             }
             catch( Exception ex) {
                 return BadRequest(ex);

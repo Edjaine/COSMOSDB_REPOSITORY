@@ -4,8 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Core.Models;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 
@@ -31,17 +33,33 @@ namespace TodoService.Infrastructure.Data
             );
 
         }
-
-        public IList<Document> ReadDocumentBySql(string query) 
+        public IQueryable<T> ReadDocumentBySql<T>(Expression<Func<T, bool>> predicate) 
         {
             var option = new FeedOptions { EnableCrossPartitionQuery = true };
 
-            var documents = _documentClient.CreateDocumentQuery<Document>(
-                UriFactory.CreateDocumentCollectionUri(_databaseName, _collectionName), query, option
-            ).ToList();
-
-            return documents.ToList();
+            return _documentClient.CreateDocumentQuery<T>(
+                UriFactory.CreateDocumentCollectionUri(_databaseName, _collectionName), option
+            ).Where(predicate);        
         }
+
+        public IQueryable<Document> ReadDocumentBySql(string query) 
+        {
+            var option = new FeedOptions { EnableCrossPartitionQuery = true };
+
+            return _documentClient.CreateDocumentQuery<Document>(
+                UriFactory.CreateDocumentCollectionUri(_databaseName, _collectionName), query, option
+            );        
+        }
+        public IQueryable<Document> ReadDocumentBy() 
+        {
+            var option = new FeedOptions { EnableCrossPartitionQuery = true };
+
+            return _documentClient.CreateDocumentQuery<Document>(
+                UriFactory.CreateDocumentCollectionUri(_databaseName, _collectionName), option
+            );            
+        }
+        
+
 
         public async Task<Document> ReadDocumentAsync(string documentId, RequestOptions options = null,
             CancellationToken cancellationToken = default(CancellationToken))
@@ -73,5 +91,7 @@ namespace TodoService.Infrastructure.Data
             return await _documentClient.DeleteDocumentAsync(
                 UriFactory.CreateDocumentUri(_databaseName, _collectionName, documentId), options, cancellationToken);
         }
+
+
     }
 }

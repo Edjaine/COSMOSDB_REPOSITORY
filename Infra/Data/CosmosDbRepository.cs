@@ -12,6 +12,7 @@ using Core.Interface;
 using Core.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace TodoService.Infrastructure.Data
 {
@@ -23,6 +24,25 @@ namespace TodoService.Infrastructure.Data
         {
             _cosmosDbClientFactory = cosmosDbClientFactory;
         }
+        
+        public IList<T> GetAll(Expression<Func<T, bool>> predicate)
+        {
+            try
+            {
+                var cosmosDbClient = _cosmosDbClientFactory.GetClient(CollectionName);
+                return  cosmosDbClient.ReadDocumentBySql<T>(predicate).ToList();
+
+            }
+            catch (DocumentClientException e)
+            {
+                if (e.StatusCode == HttpStatusCode.NotFound)
+                {
+                    throw new EntityNotFoundException();
+                }
+                throw;
+            }
+        }
+
 
         public Task<IList<T>> GetAll(string sql) 
         {
@@ -131,5 +151,7 @@ namespace TodoService.Infrastructure.Data
         public abstract string CollectionName { get; }
         public virtual string GenerateId(T entity) => Guid.NewGuid().ToString();
         public virtual PartitionKey ResolvePartitionKey(string entityId) => null;
+
+
     }
 }
