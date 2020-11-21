@@ -7,3 +7,12 @@
 /home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/obj/Debug/netstandard2.0/Core.csproj.CoreCompileInputs.cache
 /home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/obj/Debug/netstandard2.0/Core.dll
 /home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/obj/Debug/netstandard2.0/Core.pdb
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/bin/Debug/netstandard2.0/Core.deps.json
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/bin/Debug/netstandard2.0/Core.dll
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/bin/Debug/netstandard2.0/Core.pdb
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/obj/Debug/netstandard2.0/Core.csprojAssemblyReference.cache
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/obj/Debug/netstandard2.0/Core.AssemblyInfoInputs.cache
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/obj/Debug/netstandard2.0/Core.AssemblyInfo.cs
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/obj/Debug/netstandard2.0/Core.csproj.CoreCompileInputs.cache
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/obj/Debug/netstandard2.0/Core.dll
+/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/obj/Debug/netstandard2.0/Core.pdb

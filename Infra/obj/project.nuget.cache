@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vzwg2faYjN//wKh2hLZugDwo38sSne3Quq2Cyoit5fLfwTkl9AzyeFWFx4KkAhVS9qvKzvRCzjqRAbOGlcLTIw==",
+  "dgSpecHash": "KS09Mxu/67jUUwhZgixNltdsMXZ5aP2IFPB1yg2KJg6FUNXT5Mx8KVWpChmujtPlBcUWmPDsUnAxPWPHNeY41w==",
   "success": true,
-  "projectFilePath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/Infra.csproj",
+  "projectFilePath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Infra/Infra.csproj",
   "expectedPackageFiles": [
     "/home/edjaine/.nuget/packages/microsoft.azure.documentdb.core/2.12.0/microsoft.azure.documentdb.core.2.12.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/microsoft.csharp/4.0.1/microsoft.csharp.4.0.1.nupkg.sha512",

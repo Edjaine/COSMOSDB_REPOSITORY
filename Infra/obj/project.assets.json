@@ -5654,11 +5654,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/Infra.csproj",
+      "projectUniqueName": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Infra/Infra.csproj",
       "projectName": "Infra",
-      "projectPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/Infra.csproj",
+      "projectPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Infra/Infra.csproj",
       "packagesPath": "/home/edjaine/.nuget/packages/",
-      "outputPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Infra/obj/",
+      "outputPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Infra/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/edjaine/.nuget/NuGet/NuGet.Config"
@@ -5671,9 +5671,10 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj": {
-              "projectPath": "/home/edjaine/Documents/Fontes/POC-REPOSITORY-COSMOS/Core/Core.csproj"
+            "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj": {
+              "projectPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj"
             }
           }
         }
@@ -5686,6 +5687,7 @@
     },
     "frameworks": {
       "netstandard2.0": {
+        "targetAlias": "netstandard2.0",
         "dependencies": {
           "Microsoft.Azure.DocumentDB.Core": {
             "target": "Package",
@@ -5708,7 +5710,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/edjaine/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }
