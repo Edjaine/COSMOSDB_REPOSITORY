@@ -91,7 +91,7 @@ namespace TodoService.Infrastructure.Data
         {
             try
             {
-                entity.Id = GenerateId(entity);
+                entity.id = GenerateId(entity);
                 var cosmosDbClient = _cosmosDbClientFactory.GetClient(CollectionName);
                 var document = await cosmosDbClient.CreateDocumentAsync(entity);
                 return JsonConvert.DeserializeObject<T>(document.ToString());
@@ -112,7 +112,7 @@ namespace TodoService.Infrastructure.Data
             try
             {
                 var cosmosDbClient = _cosmosDbClientFactory.GetClient(CollectionName);
-                var document = await cosmosDbClient.ReplaceDocumentAsync(entity.Id, entity);
+                var document = await cosmosDbClient.ReplaceDocumentAsync(entity.id, entity);
                 return JsonConvert.DeserializeObject<T>(document.ToString());
             }
             catch (DocumentClientException e)
