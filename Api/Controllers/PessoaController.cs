@@ -22,11 +22,12 @@ namespace Api.Controllers
             _pessoaRepository = pessoaRepository;
         }
         [HttpGet]
-        public IActionResult Get() {
+        public async Task<IActionResult> Get() {
             try 
             {
-                return Ok( _pessoaRepository.GetAll(c=> c.idade == "35"));
-                //return Ok( await _pessoaRepository.GetAll("select * from c where c.idade = '37'"));
+                //return Ok( _pessoaRepository.GetAll(c => c.id.Length > 0));
+                var pessoas = await _pessoaRepository.GetAll("select * from c");
+                return Ok(pessoas);
             }
             catch( Exception ex) {
                 return BadRequest(ex);
@@ -55,7 +56,7 @@ namespace Api.Controllers
             }
         } 
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id){
             try
             {

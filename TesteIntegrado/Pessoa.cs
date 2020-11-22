@@ -31,8 +31,6 @@ namespace TesteIntegrado
             //Act
             var response = await _client.GetAsync(url);
             var value = await response.Content.ReadAsStringAsync();   
-            
-            Console.WriteLine(value);         
             var pessoas = Newtonsoft.Json.JsonConvert.DeserializeObject<PessoaViewModel[]>(value);
             
             //Assert
@@ -88,8 +86,21 @@ namespace TesteIntegrado
             Assert.NotEmpty(pessoas.id);
             Assert.NotEqual(pessoas.nome, pessoaPersistido.nome);
 
-
         }
+            [Fact]
+            public async Task RemovePessoa()
+            {
+                //Arrage
+                var pessoa =  await this.CriaPessoa();
+                var request = $"/Pessoa/{pessoa.id}";
+
+                Console.WriteLine($"Delete >>> {request}"); 
+
+                //Act
+                var result = await _client.DeleteAsync(request);
+                //Assert
+                result.EnsureSuccessStatusCode();
+            }
     }    
 
 }

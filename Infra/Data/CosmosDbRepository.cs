@@ -44,14 +44,14 @@ namespace TodoService.Infrastructure.Data
         }
 
 
-        public Task<IList<T>> GetAll(string sql) 
+        public async Task<IList<T>> GetAll(string sql) 
         {
             try
             {
                 var cosmosDbClient = _cosmosDbClientFactory.GetClient(CollectionName);
                 var document = cosmosDbClient.ReadDocumentBySql(sql);
                 var arrayDocument = string.Join<Document>(",", document.ToList());                     
-                return Task.Factory.StartNew( () => JsonConvert.DeserializeObject<IList<T>>( $"[ {arrayDocument} ]"));
+                return await Task.Factory.StartNew( () => JsonConvert.DeserializeObject<IList<T>>( $"[ {arrayDocument} ]"));
 
             }
             catch (DocumentClientException e)
