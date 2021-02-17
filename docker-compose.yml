@@ -1,0 +1,10 @@
+version: '3.4'
+
+services: 
+  poc-cosmos:
+   image: c83edsoliveiraxxx/poc-cosmos-repository:lastest
+   build:
+    context: ./
+    dockerfile: dockerfile  
+   ports: 
+       - 1000:80    

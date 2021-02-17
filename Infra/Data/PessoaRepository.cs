@@ -1,20 +1,50 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT license.using System
-
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using Core.Interface;
+using Core.Models;
 using Microsoft.Azure.Documents;
 using TodoService.Infrastructure.Data;
-using Core.Models;
-using Core.Interface;
 
-namespace Pessoa.Infrastructure.Data
+namespace Infra.Data
 {
-    public class PessoaRepository : CosmosDbRepository<Core.Models.Pessoa> , IPessoaRepository
+    public partial class PessoaRepository<T> : AgenteRepository<T>, IPessoaRepository<T>
     {
-        public PessoaRepository(ICosmosDbClientFactory factory) : base(factory) { }
+        private string tipo = "Pessoa";
+        public PessoaRepository(ICosmosDbClientFactory factory) : base(factory)
+        {
+        
+        }
 
-        public override string CollectionName { get; } = "Pessoa";
-        public override string GenerateId(Core.Models.Pessoa entity) => $"{entity.idade}:{Guid.NewGuid()}";
-        public override PartitionKey ResolvePartitionKey(string entityId) => new PartitionKey(entityId.Split(':')[0]);
+        public async Task<T> AddAsync(T entity)
+        {
+            var agente = new Agente<T>() {
+                id = Guid.NewGuid().ToString(),
+                tipo = tipo,
+                documento = entity
+            };
+            var agentes  =  await base.AddAsync(agente);
+            return agentes.documento;
+            
+        }
+
+        public async Task<T> UpdateAsync(T entity)
+        {
+            throw new NotImplementedException();
+        }
+        
+
+        IList<T> IPessoaRepository<T>.GetAll(Expression<Func<Agente<T>, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        IList<T> IPessoaRepository<T>.GetAll(string query)
+        {
+            var agente = base.GetAll(c => c.tipo == tipo);
+            return agente.Select(a => a.documento).ToList<T>();            
+        }
     }
 }

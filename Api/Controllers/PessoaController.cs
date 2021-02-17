@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Interface;
+using Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -14,9 +15,9 @@ namespace Api.Controllers
     {
         private readonly ILogger<PessoaController> _logger;
 
-        private readonly IPessoaRepository _pessoaRepository;
+        private readonly IPessoaRepository<Pessoa> _pessoaRepository;
 
-        public PessoaController(ILogger<PessoaController> logger, IPessoaRepository pessoaRepository)
+        public PessoaController(ILogger<PessoaController> logger, IPessoaRepository<Pessoa> pessoaRepository)
         {
             _logger = logger;
             _pessoaRepository = pessoaRepository;
@@ -24,9 +25,8 @@ namespace Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get() {
             try 
-            {
-                //return Ok( _pessoaRepository.GetAll(c => c.id.Length > 0));
-                var pessoas = await _pessoaRepository.GetAll("select * from c");
+            {         
+                var pessoas = _pessoaRepository.GetAll("");
                 return Ok(pessoas);
             }
             catch( Exception ex) {
@@ -47,7 +47,7 @@ namespace Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Core.Models.Pessoa pessoa)
         {
-            try {
+            try {               
                 var resposta = await _pessoaRepository.AddAsync(pessoa);
                 return Ok(resposta);
             } 

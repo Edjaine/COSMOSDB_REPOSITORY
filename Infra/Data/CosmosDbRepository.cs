@@ -25,7 +25,7 @@ namespace TodoService.Infrastructure.Data
             _cosmosDbClientFactory = cosmosDbClientFactory;
         }
         
-        public IList<T> GetAll(Expression<Func<T, bool>> predicate)
+        public virtual IList<T> GetAll(Expression<Func<T, bool>> predicate)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace TodoService.Infrastructure.Data
         }
 
 
-        public async Task<IList<T>> GetAll(string sql) 
+        public virtual async Task<IList<T>> GetAll(string sql) 
         {
             try
             {

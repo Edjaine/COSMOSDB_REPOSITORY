@@ -12,9 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Pessoa.Infrastructure.Data;
 using TodoService.Api.Options;
 using Microsoft.OpenApi.Models;
+using Infra.Data;
+using Core.Models;
 
 namespace Api
 {
@@ -48,8 +49,8 @@ namespace Api
             //      options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             //);
 
-            services.AddCosmosDb(serviceEndpoint, authKey, databaseName, collectionNames);
-            services.AddScoped<IPessoaRepository, PessoaRepository>();
+            services.AddCosmosDb(serviceEndpoint, authKey, databaseName, collectionNames);            
+            services.AddScoped<IPessoaRepository<Pessoa>, PessoaRepository<Pessoa>>();
 
             services.AddControllers();
         }
