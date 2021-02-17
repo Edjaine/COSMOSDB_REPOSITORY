@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj": {}
+    "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj": {}
   },
   "projects": {
-    "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj": {
+    "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj",
+        "projectUniqueName": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj",
         "projectName": "Core",
-        "projectPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj",
+        "projectPath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj",
         "packagesPath": "/home/edjaine/.nuget/packages/",
-        "outputPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/obj/",
+        "outputPath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/edjaine/.nuget/NuGet/NuGet.Config"
@@ -55,7 +55,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/home/edjaine/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
         }
       }
     }

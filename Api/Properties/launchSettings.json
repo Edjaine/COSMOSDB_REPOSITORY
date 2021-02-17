@@ -20,8 +20,8 @@
     "Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "Pessoa",
-      "applicationUrl": "http://localhost:5000",
+      "launchUrl": "Swagger/index.html",
+      "applicationUrl": "http://localhost:80",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

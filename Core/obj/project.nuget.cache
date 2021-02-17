@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CXM9tKSFx/1lv0Sor60AQDNKLaaubemUiTEWnjGwciUuuu7tGXvIMAlTV2WmThy81DQUPSCt1rrBuUtIkJKQKw==",
+  "dgSpecHash": "xRjw5o3x4lSswbXIgvprfUsTHRmYMLx8tiZ+2edipLEhKh4aaV/NeIN0uYTVprxgJ3nQQJoK9cijFt5NPoZ5mA==",
   "success": true,
-  "projectFilePath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj",
+  "projectFilePath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj",
   "expectedPackageFiles": [
     "/home/edjaine/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"

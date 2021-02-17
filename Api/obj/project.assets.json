@@ -5869,11 +5869,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Api/Api.csproj",
+      "projectUniqueName": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Api/Api.csproj",
       "projectName": "Api",
-      "projectPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Api/Api.csproj",
+      "projectPath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Api/Api.csproj",
       "packagesPath": "/home/edjaine/.nuget/packages/",
-      "outputPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Api/obj/",
+      "outputPath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/edjaine/.nuget/NuGet/NuGet.Config"
@@ -5888,11 +5888,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj": {
-              "projectPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj"
+            "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj": {
+              "projectPath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj"
             },
-            "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Infra/Infra.csproj": {
-              "projectPath": "/home/edjaine/Documentos/Fontes/COSMOSDB_REPOSITORY/Infra/Infra.csproj"
+            "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Infra/Infra.csproj": {
+              "projectPath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Infra/Infra.csproj"
             }
           }
         }
@@ -5938,7 +5938,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/edjaine/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
       }
     }
   }
