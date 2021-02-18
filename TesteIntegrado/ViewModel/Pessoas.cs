@@ -3,8 +3,8 @@ using System.Collections.Generic;
 namespace TesteIntegrado.ViewModel
 {
      public class PessoaViewModel    {
-        public string nome { get; set; } 
-        public string idade { get; set; } 
-        public string id { get; set; } 
+        public string Nome { get; set; } 
+        public string Idade { get; set; } 
+        public System.Guid Id { get; set; } 
     }
 }

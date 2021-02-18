@@ -6,7 +6,7 @@ using Core.Models;
 
 namespace Core.Interface
 {
-    public interface IPessoaRepository<T>: IRepository<Agente<T>>
+    public interface IPessoaRepository<T>: IRepository<Agente<T>> where T : Dominio
     {
         IList<T> GetAll(Expression<Func<Agente<T>, bool>> predicate);
         IList<T> GetAll(string query);

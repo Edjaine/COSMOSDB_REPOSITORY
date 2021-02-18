@@ -1,4 +1,4 @@
-namespace Core.Dominio
+namespace Core.Models
 {
     public class Empresa: Dominio
     {

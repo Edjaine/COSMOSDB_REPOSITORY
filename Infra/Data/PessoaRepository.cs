@@ -10,7 +10,7 @@ using TodoService.Infrastructure.Data;
 
 namespace Infra.Data
 {
-    public partial class PessoaRepository<T> : AgenteRepository<T>, IPessoaRepository<T>
+    public partial class PessoaRepository<T> : AgenteRepository<T>, IPessoaRepository<T> where T: Dominio
     {
         private string tipo = "Pessoa";
         public PessoaRepository(ICosmosDbClientFactory factory) : base(factory)
@@ -32,7 +32,13 @@ namespace Infra.Data
 
         public async Task<T> UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+                var agente = new Agente<T>() {
+                id = Guid.NewGuid().ToString(),
+                tipo = tipo,
+                documento = entity
+            };
+            var agentes  =  await base.UpdateAsync(agente);
+            return agentes.documento;
         }
         
 
@@ -43,7 +49,7 @@ namespace Infra.Data
 
         IList<T> IPessoaRepository<T>.GetAll(string query)
         {
-            var agente = base.GetAll(c => c.tipo == tipo);
+            var agente = base.GetAll(c => c.tipo == tipo);  
             return agente.Select(a => a.documento).ToList<T>();            
         }
     }

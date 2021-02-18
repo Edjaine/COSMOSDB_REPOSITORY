@@ -1,9 +1,9 @@
-namespace Core.Dominio
+namespace Core.Models
 {
-    public class Pessoa
+    public class Pessoa: Dominio
     {
-        public string Name { get; set; }
-        public int idade { get; set; }               
+        public string Nome { get; set; }
+        public int Idade { get; set; }               
 
     }
 }

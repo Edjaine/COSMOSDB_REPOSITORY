@@ -52,6 +52,7 @@ namespace Api
             services.AddCosmosDb(serviceEndpoint, authKey, databaseName, collectionNames);            
             services.AddScoped<IPessoaRepository<Pessoa>, PessoaRepository<Pessoa>>();
 
+            services.AddAutoMapperConfig();
             services.AddControllers();
         }
 

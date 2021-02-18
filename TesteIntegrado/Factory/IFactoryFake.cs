@@ -6,7 +6,7 @@ namespace TesteIntegrado.Factory
     {
         T Constroi();
 
-        T Constroi(string id);
+        T Constroi(Guid id);
 
     }
 }

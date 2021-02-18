@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "xRjw5o3x4lSswbXIgvprfUsTHRmYMLx8tiZ+2edipLEhKh4aaV/NeIN0uYTVprxgJ3nQQJoK9cijFt5NPoZ5mA==",
+  "dgSpecHash": "XWt+r026RwX+2jfZVhM5jac2nH+8A1qLYW8s9yYgFtLWLHmWKUbEnFANEBFAZORza6Ps2MJ1jPM9Xtxpnk8xZA==",
   "success": true,
   "projectFilePath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj",
   "expectedPackageFiles": [
+    "/home/edjaine/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/home/edjaine/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+    "/home/edjaine/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.reflection.emit.ilgeneration/4.7.0/system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

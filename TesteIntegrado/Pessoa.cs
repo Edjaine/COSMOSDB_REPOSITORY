@@ -14,9 +14,7 @@ namespace TesteIntegrado
     public class Pessoa: IClassFixture<TestFixture<Api.Startup>>
     {        
         private readonly HttpClient _client;
-
         public IFactoryFake<PessoaViewModel> _factoryPessoa { get; }
-
         public Pessoa(TestFixture<Api.Startup> fixture)
         {
             _client = fixture.Client;            
@@ -36,7 +34,7 @@ namespace TesteIntegrado
             //Assert
             response.EnsureSuccessStatusCode();
             Assert.True(pessoas.ToList().Count > 0);
-            Assert.NotEmpty(pessoas.ToList().FirstOrDefault().nome);
+            Assert.NotEmpty(pessoas.ToList().FirstOrDefault().Nome);
         }
 
         [Fact]
@@ -55,7 +53,7 @@ namespace TesteIntegrado
 
             //Assert
             result.EnsureSuccessStatusCode();
-            Assert.NotEmpty(pessoas.id);
+            Assert.NotEmpty(pessoas.Id.ToString());
 
             return pessoas;
         }
@@ -67,12 +65,12 @@ namespace TesteIntegrado
             var pessoaPersistido = await this.CriaPessoa();    
             var request = new {
                 Url = "/Pessoa",
-                Body = _factoryPessoa.Constroi(pessoaPersistido.id)
+                Body = _factoryPessoa.Constroi(pessoaPersistido.Id)
             };
 
 
-            request.Body.idade = pessoaPersistido.idade;
-            var novoNomePessoa = request.Body.nome;
+            request.Body.Idade = pessoaPersistido.Idade;
+            var novoNomePessoa = request.Body.Nome;
             
             //Act
             var result = await _client.PutAsync(request.Url, ContentHelper.GetStringContent(request.Body));
@@ -83,8 +81,8 @@ namespace TesteIntegrado
 
             //Assert
             result.EnsureSuccessStatusCode();
-            Assert.NotEmpty(pessoas.id);
-            Assert.NotEqual(pessoas.nome, pessoaPersistido.nome);
+            Assert.NotEmpty(pessoas.Id.ToString());
+            Assert.NotEqual(pessoas.Nome, pessoaPersistido.Nome);
 
         }
             [Fact]
@@ -92,7 +90,7 @@ namespace TesteIntegrado
             {
                 //Arrage
                 var pessoa =  await this.CriaPessoa();
-                var request = $"/Pessoa/{pessoa.id}";
+                var request = $"/Pessoa/{pessoa.Id}";
 
                 Console.WriteLine($"Delete >>> {request}"); 
 
