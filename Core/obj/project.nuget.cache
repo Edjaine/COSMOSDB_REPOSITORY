@@ -1,15 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "XWt+r026RwX+2jfZVhM5jac2nH+8A1qLYW8s9yYgFtLWLHmWKUbEnFANEBFAZORza6Ps2MJ1jPM9Xtxpnk8xZA==",
+  "dgSpecHash": "FmlJP4X09owUk//DHYGPHIzDBNPtt6qq+QZPRiDtMVwOHsQm/EpYCu6dCQue8uLoT1IuK1CYkrAVJzSildv7zA==",
   "success": true,
   "projectFilePath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Core/Core.csproj",
   "expectedPackageFiles": [
     "/home/edjaine/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/microsoft.bcl.asyncinterfaces/5.0.0/microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
-    "/home/edjaine/.nuget/packages/system.reflection.emit.ilgeneration/4.7.0/system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
+    "/home/edjaine/.nuget/packages/system.reflection.emit.ilgeneration/4.7.0/system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.text.encodings.web/5.0.0/system.text.encodings.web.5.0.0.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.text.json/5.0.1/system.text.json.5.0.1.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }

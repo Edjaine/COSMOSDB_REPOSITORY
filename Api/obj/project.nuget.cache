@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "adXhHp52nI7tIRFg0bNMfVDqcaKDiYyE7weSgliiAHPys+nkQ5cRPbOQysNiFZW6vp0Z0CkzUnvWiaQfCK4mwg==",
+  "dgSpecHash": "bHEwGBErzRZ0ET20csuX7M/7ys0Br2NInOAmi72uwMS8vCAqGUlga/Cf+aDHGFQDyEnDRu2dftpKWFwA5QGL3A==",
   "success": true,
   "projectFilePath": "/home/edjaine/Documents/Fontes/COSMOSDB_REPOSITORY/Api/Api.csproj",
   "expectedPackageFiles": [
@@ -106,6 +106,7 @@
     "/home/edjaine/.nuget/packages/system.security.principal.windows/4.5.0/system.security.principal.windows.4.5.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/system.security.securestring/4.0.0/system.security.securestring.4.0.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
+    "/home/edjaine/.nuget/packages/system.text.json/5.0.1/system.text.json.5.0.1.nupkg.sha512",
     "/home/edjaine/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",
     "/home/edjaine/.nuget/packages/system.threading.overlapped/4.0.1/system.threading.overlapped.4.0.1.nupkg.sha512",
     "/home/edjaine/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",

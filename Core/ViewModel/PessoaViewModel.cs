@@ -5,5 +5,10 @@ namespace Core.ViewModel
         public System.Guid Id { get; set; }
         public string Nome { get; set; }
         public string Idade { get; set; }
+        public string Tipo {
+            get {
+                return "Pessoa";
+            }
+        }
     }
 }
