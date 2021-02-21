@@ -6,7 +6,7 @@ namespace Core.Models
     public abstract class Dominio
     {
         [JsonIgnore]
-        public Guid Id { get; set; }       
-        
+        public Guid Id { get; set; }                    
+
     }
 }

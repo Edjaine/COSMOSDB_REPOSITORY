@@ -8,11 +8,11 @@ namespace Core.Interface
 {
     public interface IPessoaRepository<T>: IRepository<Agente<T>> where T : Dominio
     {
-        IList<T> GetAll(Expression<Func<Agente<T>, bool>> predicate);
-        IList<T> GetAll(string query);
+        IList<T> Get(Expression<Func<Agente<T>, bool>> predicate);
+        IList<T> GetAll();
         Task<T> AddAsync(T dominio);
         Task<T> UpdateAsync(T dominio);
-        Task DeleteAsync(string id);
+        Task<T> GetById(string id);
        
     }
 }

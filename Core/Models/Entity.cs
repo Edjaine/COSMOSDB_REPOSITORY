@@ -5,5 +5,6 @@ namespace Core.Models
     {
         public string id { get; set; }
         public string tipo {get; set;}
+
     }
 }

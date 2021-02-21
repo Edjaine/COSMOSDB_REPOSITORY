@@ -25,7 +25,7 @@ namespace Infra.Data
         {
             var agente = _mapper.Map<Agente<T>>(entity);
             var retorno  =  await base.AddAsync(agente);
-            return retorno.documento;            
+            return _mapper.Map<T>(agente);            
         }
 
         public async Task<T> UpdateAsync(T entity)
@@ -34,17 +34,26 @@ namespace Infra.Data
             var retorno  =  await base.UpdateAsync(agente);
             return retorno.documento;
         }
-        
-
-        IList<T> IPessoaRepository<T>.GetAll(Expression<Func<Agente<T>, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        IList<T> IPessoaRepository<T>.GetAll(string query)
+        IList<T> IPessoaRepository<T>.GetAll()
         {
             var agente = base.GetAll(c => c.tipo == tipo);  
-            return agente.Select(a => a.documento).ToList<T>();            
+            
+            var pessoas = new List<T>();
+            agente.ToList().ForEach( a => {
+                pessoas.Add( _mapper.Map<T>(a));
+            });
+            return pessoas;            
+        }
+
+        IList<T> IPessoaRepository<T>.Get(Expression<Func<Agente<T>, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }        
+
+        public async Task<T> GetById(string id)
+        {
+            var agente = await base.GetByIdAsync(id);
+            return _mapper.Map<T>(agente.documento);
         }
     }
 }
