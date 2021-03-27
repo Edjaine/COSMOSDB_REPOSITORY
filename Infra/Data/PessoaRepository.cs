@@ -50,10 +50,22 @@ namespace Infra.Data
             throw new NotImplementedException();
         }        
 
-        public async Task<T> GetById(string id)
+        public async Task<T> GetById(Guid id)
         {
-            var agente = await base.GetByIdAsync(id);
+            var chave = $"{tipo}:{id.ToString()}";
+            var agente = await base.GetByIdAsync(chave);
             return _mapper.Map<T>(agente.documento);
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var chave = $"{tipo}:{id.ToString()}";
+            await base.DeleteAsync(chave);
+        }
+
+        public T GetByIdAsync(Guid d)
+        {
+            throw new NotImplementedException();
         }
     }
 }

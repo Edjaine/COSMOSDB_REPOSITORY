@@ -5,6 +5,6 @@ namespace TesteIntegrado.ViewModel
      public class PessoaViewModel    {
         public string Nome { get; set; } 
         public string Idade { get; set; } 
-        public System.Guid Id { get; set; } 
+        public string Id { get; set; } 
     }
 }

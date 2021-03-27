@@ -62,9 +62,9 @@ namespace Api.Controllers
         } 
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(string id){
+        public async Task<IActionResult> Delete(Guid id){
             try
-            {
+            {                
                 await _pessoaRepository.DeleteAsync(id);
                 return Ok();
             }
@@ -74,12 +74,12 @@ namespace Api.Controllers
             }
         }
         
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update([FromBody] Core.Models.Pessoa pessoa, Guid id) 
         {
             try
-            {
-                pessoa.Id = id;
+            {  
+                pessoa.Id = id;          
                 var pessoaPesistida  = await _pessoaRepository.UpdateAsync(pessoa);                
                 return Ok( _mapper.Map<PessoaViewModel>(pessoaPesistida));
             }

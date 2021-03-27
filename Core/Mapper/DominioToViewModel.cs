@@ -10,7 +10,8 @@ namespace Core.Mapper
         public DominioToViewModel()
         {
             CreateMap<Pessoa, PessoaViewModel>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => typeof(Pessoa).Name + ":" + src.Id));
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
+                
         }
     }
 }

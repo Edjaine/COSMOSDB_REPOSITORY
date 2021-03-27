@@ -10,7 +10,7 @@ using TesteIntegrado.ViewModel;
 using Xunit;
 
 namespace TesteIntegrado
-{
+{    
     public class Pessoa: IClassFixture<TestFixture<Api.Startup>>
     {        
         private readonly HttpClient _client;
@@ -34,10 +34,9 @@ namespace TesteIntegrado
             //Assert
             response.EnsureSuccessStatusCode();
             Assert.True(pessoas.ToList().Count > 0);
-            Assert.NotEmpty(pessoas.ToList().FirstOrDefault().Nome);
+            //Assert.NotEmpty(pessoas.ToList().FirstOrDefault().Nome);
         }
-
-        [Fact]
+        [Fact]        
         public async Task<PessoaViewModel> CriaPessoa () {
             //Arrage
 
@@ -65,15 +64,17 @@ namespace TesteIntegrado
             var pessoaPersistido = await this.CriaPessoa();    
             var request = new {
                 Url = "/Pessoa",
-                Body = _factoryPessoa.Constroi(pessoaPersistido.Id)
+                Body = _factoryPessoa.Constroi(Guid.Parse(pessoaPersistido.Id))
             };
 
 
+            var novoNome = "Nome Alterado no teste";
             request.Body.Idade = pessoaPersistido.Idade;
-            var novoNomePessoa = request.Body.Nome;
+            request.Body.Nome = novoNome;
+
             
             //Act
-            var result = await _client.PutAsync(request.Url, ContentHelper.GetStringContent(request.Body));
+            var result = await _client.PutAsync($"{request.Url}/{pessoaPersistido.Id}", ContentHelper.GetStringContent(request.Body));
             var value = await result.Content.ReadAsStringAsync();
             Console.WriteLine(value);
             
@@ -82,7 +83,7 @@ namespace TesteIntegrado
             //Assert
             result.EnsureSuccessStatusCode();
             Assert.NotEmpty(pessoas.Id.ToString());
-            Assert.NotEqual(pessoas.Nome, pessoaPersistido.Nome);
+            Assert.Equal(pessoas.Nome, novoNome);
 
         }
             [Fact]

@@ -9,7 +9,7 @@ namespace TesteIntegrado.Factory
         public PessoaViewModel Constroi(Guid id)
         {
             return new PessoaViewModel () {
-                Id = id,
+                Id = id.ToString(),
                 Nome = new Faker().Person.FullName,
                 Idade = new Faker().Person.Random.Int(5, 90).ToString()                                
             };

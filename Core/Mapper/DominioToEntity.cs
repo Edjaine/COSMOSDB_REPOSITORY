@@ -12,7 +12,7 @@ namespace Core.Mapper
             CreateMap<Pessoa, Pessoa>();
 
             CreateMap<Pessoa, Agente<Pessoa>>()
-                .ForMember(dest => dest.id, opt => opt.MapFrom(src => Guid.NewGuid()))
+            .ForMember(dest => dest.id, opt => opt.MapFrom(src => $"{typeof(Pessoa).Name.ToString()}:{src.Id.ToString()}"))
                 .ForMember(dest => dest.tipo, opt => opt.MapFrom(src => typeof(Pessoa).Name.ToString()))
                 .ForMember(dest => dest.documento, opt => opt.MapFrom(src => src))                
                 .ReverseMap();
