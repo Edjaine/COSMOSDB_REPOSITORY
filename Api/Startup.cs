@@ -16,6 +16,7 @@ using TodoService.Api.Options;
 using Microsoft.OpenApi.Models;
 using Infra.Data;
 using Core.Models;
+using Serilog;
 
 namespace Api
 {
@@ -43,11 +44,6 @@ namespace Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "teste", Version = "v1" });
             });
-
-            // services.AddControllersWithViews()
-            //     .AddNewtonsoftJson(options =>
-            //      options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-            //);
 
             services.AddCosmosDb(serviceEndpoint, authKey, databaseName, collectionNames);            
             services.AddScoped<IPessoaRepository<Pessoa>, PessoaRepository<Pessoa>>();

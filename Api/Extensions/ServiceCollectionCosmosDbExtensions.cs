@@ -4,6 +4,7 @@ using Microsoft.Azure.Documents.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Serilog;
 using TodoService.Infrastructure.Data;
 
 namespace Api.Extensions
@@ -21,7 +22,7 @@ namespace Api.Extensions
             });
             documentClient.OpenAsync().Wait();
 
-            var cosmosDbClientFactory = new CosmosDbClientFactory(databaseName, collectionNames, documentClient);
+            var cosmosDbClientFactory = new CosmosDbClientFactory(databaseName, collectionNames, documentClient, Log.Logger);
             cosmosDbClientFactory.EnsureDbSetupAsync().Wait();
 
             services.AddSingleton<ICosmosDbClientFactory>(cosmosDbClientFactory);
